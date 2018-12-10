@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
+
+import WordPlate from "../../components/WordPlate";
 
 import "./WordsList.css";
 
@@ -51,24 +54,6 @@ class WordsList extends Component {
     return wordsToLearn;
   }
 
-  renderWords = () => {
-    return this.wordsToLearn.map((element, index) => (
-      <div className="word-plate" key={`${index}-${element.eng}`}>
-        <div className="word-main">
-          <p>word: {element.eng}</p>
-          <p>translation: {element.ukr}</p>
-          <p>definition: {element.definition}</p>
-        </div>
-        <div className="word-mark">
-          <button
-            className={"btn-mark"}
-            onClick={(event) => { this.markAsLearned(event, element) }}><i className="fas fa-check"></i></button>
-        </div>
-      </div>
-    ));
-  }
-
-
   render() {
     const { progress } = this.props;
 
@@ -77,7 +62,9 @@ class WordsList extends Component {
     } else {
       return (
         <div>
-          <div className="div-words-plate">{this.renderWords()}</div>
+          <div className="div-words-plate">
+            <WordPlate arr={this.wordsToLearn} key="Tests" func={this.markAsLearned} className="word-mark" />
+          </div>
           <div className="div-words-btn">
             <button className="btn-mark btn-next-words" onClick={this.nextWords}>Next Words</button>
           </div>
@@ -86,5 +73,10 @@ class WordsList extends Component {
     }
   }
 }
+
+WordsList.propTypes = {
+  learnedNewWord: PropTypes.func,
+  progress: PropTypes.object
+};
 
 export default WordsList;

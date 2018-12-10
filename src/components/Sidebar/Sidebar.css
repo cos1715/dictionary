@@ -1,22 +1,23 @@
-.Sidebar-div {
-    display: flex;
-    min-width: 150px;
-    height: 100%;
-    background: #222;
-    padding: 0 10px;
+.sidebar-div {
+  display: flex;
+  min-width: 150px;
+  height: 100%;
+  background: #222;
+  padding: 0 10px;
 }
 
-.NavLink-selected {
-    text-shadow: 2px 2px 5px rgb(255, 255, 0);
+.navLink-selected {
+  text-shadow: 2px 2px 5px rgb(255, 255, 0);
 }
 
-.Sidebar-link {
-    color: #fff;
-    text-decoration: none;
+.sidebar-link {
+  color: #fff;
+  text-decoration: none;
 }
 
-.Sidebar-nav a {
-    display: block;
-    padding: 10px 0;
-    cursor: pointer;
+.sidebar-nav a {
+  display: block;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all .5s;
 }

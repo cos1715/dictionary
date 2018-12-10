@@ -3,7 +3,7 @@ import reducerWords from "./reducerWords";
 import reducerProgress from "./reducerProgress";
 
 const allReducers = combineReducers({
-  allWords: reducerWords,
+  // allWords: reducerWords,
   progress: reducerProgress
 });
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import PropTypes from 'prop-types';
 
 import Header from "../../components/Header";
 import SideBar from "../../components/Sidebar";
@@ -36,6 +37,11 @@ const mapDispatchToProps = dispatch => {
     },
     dispatch
   );
+};
+
+Home.propTypes = {
+  learnedNewWord: PropTypes.func,
+  progress: PropTypes.object
 };
 
 export default connect(
