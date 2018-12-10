@@ -1,0 +1,60 @@
+.div-words-plate {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.word-plate {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.word-plate:nth-of-type(even) {
+  background-color: #ddd;
+}
+
+.word-mark {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-mark {
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-mark:hover {
+  background-color: rgba(76, 175, 79, 0.432);
+  color: white;
+}
+
+.btn-mark:focus {
+  outline: none;
+}
+
+.btn-mark-sellected {
+  color: #4CAF50;
+}
+
+.div-words-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-next-words {
+  margin: 50px;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+.btn-next-words:hover {
+  background-color: #4CAF50;
+}

@@ -1,0 +1,17 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+}
+
+.header-title {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-title:focus {
+  outline: none;
+}
