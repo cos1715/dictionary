@@ -12,23 +12,21 @@ class MyVocabulary extends Component {
   render() {
     const { progress } = this.props;
 
-    if (!progress.learned.length) {
-      return <h1>Looks like you didn\'t learned anything</h1>
-    } else {
-      return (
-        <div className="app">
-          <Header />
-          <div className="app-wrapper">
-            <SideBar />
-            <main className="app-main">
-              <div className="div-words-plate">
-                <WordPlate arr={progress.learned} key="Tests" func={null} className="hide" />
-              </div>
-            </main>
-          </div>
+    return (
+      <div className="app">
+        <Header />
+        <div className="app-wrapper">
+          <SideBar />
+          <main className="app-main">
+            <div className="div-words-plate">
+              {!progress.learned.length ?
+                <h1>Looks like you didn't learned anything</h1> :
+                <WordPlate arr={progress.learned} keyWord="Tests" func={null} className="hide" />}
+            </div>
+          </main>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

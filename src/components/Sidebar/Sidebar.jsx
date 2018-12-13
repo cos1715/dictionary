@@ -11,17 +11,17 @@ export const Sidebar = () => {
           exact to="/"
           className="sidebar-link"
           activeClassName="navLink-selected"
-        >Lear n' Play</NavLink>
+        >Learn</NavLink>
         <NavLink
           to="/vocabulary"
           className="sidebar-link"
           activeClassName="navLink-selected"
-        >Your Vocabluary</NavLink>
+        >Vocabluary</NavLink>
         <NavLink
           to="/tests"
           className="sidebar-link"
           activeClassName="navLink-selected"
-        >Tests</NavLink>
+        >Play</NavLink>
       </nav>
     </aside>
   );

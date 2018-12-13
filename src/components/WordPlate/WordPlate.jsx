@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import "./WordPlate.css";
 
 const WordPlate = props => {
-  const { arr, key, func, className } = props;
+  const { arr, keyWord, func, className } = props;
 
   return arr.map(element => (
-    <div className="word-plate" key={`${key}-${element.eng}`}>
+    <div className="word-plate" key={`${keyWord}-${element.eng}`}>
       <div className="word-main">
         <p>word: {element.eng}</p>
         <p>translation: {element.ukr}</p>
@@ -19,6 +20,16 @@ const WordPlate = props => {
       </div>
     </div >
   ));
+};
+
+WordPlate.propTypes = {
+  arr: PropTypes.array,
+  key: PropTypes.string,
+  className: PropTypes.string,
+  func: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.func
+  ])
 };
 
 export default WordPlate;

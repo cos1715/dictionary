@@ -6,6 +6,8 @@ import MyVocabulary from "../MyVocabulary";
 import Tests from "../Tests";
 import NotFound from "../../components/NotFound";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />

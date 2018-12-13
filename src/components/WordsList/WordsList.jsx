@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import { toast } from "react-toastify";
 
 import WordPlate from "../../components/WordPlate";
 
@@ -34,6 +35,7 @@ class WordsList extends Component {
 
       leftToLearn.splice(index, 1);
       learned.push(word);
+      toast.info('Added to vocabulary');
       event.target.classList.add("btn-mark-sellected")
       learnedNewWord(this.cloneProgress);
     }
@@ -63,7 +65,7 @@ class WordsList extends Component {
       return (
         <div>
           <div className="div-words-plate">
-            <WordPlate arr={this.wordsToLearn} key="Tests" func={this.markAsLearned} className="word-mark" />
+            <WordPlate arr={this.wordsToLearn} keyWord="Tests" func={this.markAsLearned} className="word-mark" />
           </div>
           <div className="div-words-btn">
             <button className="btn-mark btn-next-words" onClick={this.nextWords}>Next Words</button>
