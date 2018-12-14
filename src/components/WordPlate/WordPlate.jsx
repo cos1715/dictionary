@@ -4,32 +4,19 @@ import PropTypes from 'prop-types';
 import "./WordPlate.css";
 
 const WordPlate = props => {
-  const { arr, keyWord, func, className } = props;
+  const { element } = props;
 
-  return arr.map(element => (
-    <div className="word-plate" key={`${keyWord}-${element.eng}`}>
-      <div className="word-main">
-        <p>word: {element.eng}</p>
-        <p>translation: {element.ukr}</p>
-        <p>definition: {element.definition}</p>
-      </div>
-      <div className={className}>
-        <button
-          className={"btn-mark"}
-          onClick={(event) => { func(event, element) }}><i className="fas fa-check"></i></button>
-      </div>
-    </div >
-  ));
+  return (
+    <div className="word-main">
+      <p>word: {element.eng}</p>
+      <p>translation: {element.ukr}</p>
+      <p>definition: {element.definition}</p>
+    </div>
+  );
 };
 
 WordPlate.propTypes = {
-  arr: PropTypes.array,
-  key: PropTypes.string,
-  className: PropTypes.string,
-  func: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.func
-  ])
+  element: PropTypes.object
 };
 
 export default WordPlate;

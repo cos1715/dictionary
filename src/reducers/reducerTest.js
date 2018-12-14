@@ -1,8 +1,7 @@
-import { CORRECT_ANSWER, WRONG_ANSWER } from "../actions/actionTest";
+import { CORRECT_ANSWER, WRONG_ANSWER, START_AGAIN } from "../actions/actionTest";
 
 const initState = {
-  highScore: 0,
-  lives: 5,
+  lives: 3,
   score: 0
 };
 
@@ -12,6 +11,8 @@ export default (state = initState, action) => {
       return { ...state, score: action.payload };
     case WRONG_ANSWER:
       return { ...state, lives: action.payload };
+    case START_AGAIN:
+      return initState;
     default:
       return state;
   }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { toast } from "react-toastify";
+import Zoom from 'react-reveal/Zoom';
 
-import WordPlate from "../../components/WordPlate";
+import WordPlate from "../WordPlate";
 
 import "./WordsList.css";
 
@@ -22,11 +23,11 @@ class WordsList extends Component {
   nextWords = () => {
     const { progress, learnedNewWord } = this.props;
 
-    learnedNewWord(this.cloneProgress);
     this.wordsToLearn = this.getWordsToLearn(progress.leftToLearn);
+    learnedNewWord(this.cloneProgress);
   }
 
-  markAsLearned = (event, word) => {
+  markAsLearned = word => {
     const { learnedNewWord } = this.props;
     const { leftToLearn, learned } = this.cloneProgress;
 
@@ -36,7 +37,6 @@ class WordsList extends Component {
       leftToLearn.splice(index, 1);
       learned.push(word);
       toast.info('Added to vocabulary');
-      event.target.classList.add("btn-mark-sellected")
       learnedNewWord(this.cloneProgress);
     }
   }
@@ -56,6 +56,16 @@ class WordsList extends Component {
     return wordsToLearn;
   }
 
+  renderWords = () => {
+    return this.wordsToLearn.map(element => (
+      <Zoom>
+        <button className="word-plate" onClick={() => { this.markAsLearned(element) }} key={`word-list-${element.eng}`}>
+          <WordPlate element={element} />
+        </button>
+      </Zoom >
+    ));
+  }
+
   render() {
     const { progress } = this.props;
 
@@ -65,7 +75,7 @@ class WordsList extends Component {
       return (
         <div>
           <div className="div-words-plate">
-            <WordPlate arr={this.wordsToLearn} keyWord="Tests" func={this.markAsLearned} className="word-mark" />
+            {this.renderWords()}
           </div>
           <div className="div-words-btn">
             <button className="btn-mark btn-next-words" onClick={this.nextWords}>Next Words</button>

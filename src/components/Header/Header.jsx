@@ -7,7 +7,7 @@ const Header = () => (
   <header className="app-header">
     <Link to="/" className="header-title">
       <i className="fas fa-graduation-cap"></i>
-      {`Learn n' Play`}
+      Learn n' Play
     </Link>
   </header>
 );

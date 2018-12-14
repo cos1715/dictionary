@@ -1,44 +1,56 @@
 .word-plate {
   margin: 20px;
   padding: 10px;
-  border: 1px solid black;
+  border: 3px solid #0078d7;
   border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  text-transform: capitalize;
   text-align: center;
+  background-color: #0078d7;
+  transition: all 1s;
 }
 
-.word-plate:nth-of-type(even) {
-  background-color: #ddd;
-}
-
-.word-mark {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-mark {
-  border: 2px solid #4CAF50;
-  border-radius: 5px;
-  background-color: white;
-  color: black;
-  text-align: center;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.btn-mark:hover {
-  background-color: rgba(76, 175, 79, 0.432);
-  color: white;
-}
-
-.btn-mark:focus {
+.word-plate:focus {
+  background-color: rgba(0, 120, 215, 0.3);
   outline: none;
 }
 
-.btn-mark-sellected {
-  color: #4CAF50;
-  transition-duration: 0.4s;
+.word-plate:nth-of-type(2n) {
+  border: 3px solid #4CAF50;
+  background-color: #4CAF50;
 }
 
-.hide {
-  display: none;
+.word-plate:nth-of-type(2n):focus {
+  background-color: rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+.word-plate:nth-of-type(3n) {
+  border: 3px solid #7719aa;
+  background-color: #7719aa;
+}
+
+.word-plate:nth-of-type(3n):focus {
+  background-color: rgba(119, 25, 170, 0.3);
+  outline: none;
+}
+
+.word-plate:nth-of-type(4n) {
+  border: 3px solid #d91a14;
+  background-color: #d91a14;
+}
+
+.word-plate:nth-of-type(4n):focus {
+  background-color: rgba(217, 26, 20, 0.3);
+  outline: none;
+}
+
+.word-plate:hover {
+  border: 3px solid #fff;
+}
+
+.word-plate:focus {
+  background-color: rgba(0, 120, 215, 0.3);
+  outline: none;
 }
