@@ -1,4 +1,4 @@
-Thanks for sending a pull request! Please make sure  to view the [contribution guidelines](https://github.com/cos1715/Todo-app/blob/master/CONTRIBUTING.md), then fill out the blanks below.
+Thanks for sending a pull request! Please make sure  to view the [contribution guidelines](https://github.com/cos1715/dictionary/blob/master/CONTRIBUTING.md), then fill out the blanks below.
 
 What does this implement/fix? Explain your changes.
 ---------------------------------------------------
