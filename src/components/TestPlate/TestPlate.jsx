@@ -7,17 +7,20 @@ import "./TestPlate.css";
 
 class TestPlate extends Component {
   checkTest = ({ key, target }, word) => {
+    const points = 100;
+    const lifePenalty = 1;
+
     if (key === 'Enter' && target.value) {
       const { tests, correctAnswer, wrongAnswer } = this.props;
 
       if (target.value.trim().toLowerCase() === word.ukr) {
-        const score = tests.score + 100;
+        const score = tests.score + points;
 
         target.value = '';
         toast.success('Correct');
         correctAnswer(score);
       } else {
-        const lives = tests.lives - 1;
+        const lives = tests.lives - lifePenalty;
 
         target.value = '';
         toast.error('Wrong!');
@@ -28,8 +31,9 @@ class TestPlate extends Component {
 
   renderPlate = () => {
     const { word, tests, startAgain } = this.props;
+    const minLives = 0;
 
-    if (tests.lives === 0) {
+    if (tests.lives === minLives) {
       return (
         <div className="test-plate test-sumup">
           <div className="test-sumup-info">
@@ -60,11 +64,13 @@ class TestPlate extends Component {
 
   render() {
     const { progress } = this.props;
-    if (progress.learned.length < 10)
+    const minAmountOfWords = 10;
+
+    if (progress.learned.length < minAmountOfWords)
       return (
         <div className="notify-msg">
-          <h1>Learn at least 10 words</h1>
-          <h2>{10 - progress.learned.length} words left to learn</h2>
+          <h1>Learn at least {minAmountOfWords} words</h1>
+          <h2>{minAmountOfWords - progress.learned.length} words left to learn</h2>
         </div>
       );
     else {
@@ -78,7 +84,12 @@ class TestPlate extends Component {
 };
 
 TestPlate.propTypes = {
-  word: PropTypes.object
+  word: PropTypes.object,
+  progress: PropTypes.object,
+  tests: PropTypes.object,
+  correctAnswer: PropTypes.func,
+  wrongAnswer: PropTypes.func,
+  startAgain: PropTypes.func
 };
 
 export default TestPlate;

@@ -9,7 +9,7 @@ const NotFound = () => (
     <p>Sorry, but the page you were trying to view does not exist.</p>
     <div className="not-found-sign">404</div>
     <div>
-      <Link to="/" className="not-found-link">Return to home page</Link>
+      <Link to="/dictionary" className="not-found-link">Return to home page</Link>
     </div>
   </div>
 );

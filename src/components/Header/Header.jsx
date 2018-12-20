@@ -5,7 +5,7 @@ import "./Header.css";
 
 const Header = () => (
   <header className="app-header">
-    <Link to="/" className="header-title">
+    <Link to="/dictionary" className="header-title">
       <i className="fas fa-graduation-cap"></i>
       Learn n' Play
     </Link>

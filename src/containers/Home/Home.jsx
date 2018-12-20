@@ -15,6 +15,9 @@ import "./Home.css";
 class Home extends Component {
   render() {
     const { progress, learnedNewWord } = this.props;
+    const autoClose = 2500;
+    const rtl = false;
+
     return (
       <div className="app">
         <Header />
@@ -26,10 +29,10 @@ class Home extends Component {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={2500}
+          autoClose={autoClose}
           hideProgressBar
           closeOnClick
-          rtl={false}
+          rtl={rtl}
           pauseOnVisibilityChange
           draggable
           pauseOnHover

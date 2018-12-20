@@ -25,6 +25,8 @@ class Tests extends Component {
       wrongAnswer,
       startAgain
     } = this.props;
+    const autoClose = 2500;
+    const rtl = false;
 
     return (
       <div className="app">
@@ -44,10 +46,10 @@ class Tests extends Component {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={2500}
+          autoClose={autoClose}
           hideProgressBar
           closeOnClick
-          rtl={false}
+          rtl={rtl}
           pauseOnVisibilityChange
           draggable
           pauseOnHover

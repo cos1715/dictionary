@@ -27,3 +27,7 @@
 .btn-next-words:focus {
   outline: none;
 }
+
+.pointer {
+  cursor: pointer;
+}

@@ -10,9 +10,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/vocabulary" component={MyVocabulary} />
-    <Route path="/tests" component={Tests} />
+    <Route exact path="/dictionary" component={Home} />
+    <Route path="/dictionary/vocabulary" component={MyVocabulary} />
+    <Route path="/dictionary/tests" component={Tests} />
     <Route component={NotFound} />
   </Switch>
 );

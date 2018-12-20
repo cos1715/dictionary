@@ -8,17 +8,17 @@ export const Sidebar = () => {
     <aside className="sidebar-div">
       <nav className="sidebar-nav">
         <NavLink
-          exact to="/"
+          exact to="/dictionary"
           className="sidebar-link"
           activeClassName="navLink-selected"
         ><i className="fas fa-language" /> Learn</NavLink>
         <NavLink
-          to="/vocabulary"
+          to="/dictionary/vocabulary"
           className="sidebar-link"
           activeClassName="navLink-selected"
         ><i className="fas fa-book-open" /> Vocabluary</NavLink>
         <NavLink
-          to="/tests"
+          to="/dictionary/tests"
           className="sidebar-link"
           activeClassName="navLink-selected"
         ><i className="fas fa-medal" /> Play</NavLink>

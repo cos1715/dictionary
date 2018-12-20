@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { toast } from "react-toastify";
 import Zoom from 'react-reveal/Zoom';
+import { animateScroll as scroll } from 'react-scroll';
 
 import WordPlate from "../WordPlate";
 
@@ -24,6 +25,7 @@ class WordsList extends Component {
     const { progress, learnedNewWord } = this.props;
 
     this.wordsToLearn = this.getWordsToLearn(progress.leftToLearn);
+    scroll.scrollToTop();
     learnedNewWord(this.cloneProgress);
   }
 
@@ -43,8 +45,9 @@ class WordsList extends Component {
 
   getWordsToLearn = words => {
     const wordsToLearn = [];
+    const minWordsToDisplay = 10;
     const num = Math.floor(Math.random() * words.length) + 1;
-    const numberToDisplay = num > 10 ? 10 : num;
+    const numberToDisplay = num > minWordsToDisplay ? minWordsToDisplay : num;
     const indexes = new Set();
 
     while (indexes.size !== numberToDisplay) {
@@ -58,8 +61,8 @@ class WordsList extends Component {
 
   renderWords = () => {
     return this.wordsToLearn.map(element => (
-      <Zoom>
-        <button className="word-plate" onClick={() => { this.markAsLearned(element) }} key={`word-list-${element.eng}`}>
+      <Zoom key={`word-list-${element.eng}`}>
+        <button className="word-plate pointer" onClick={() => { this.markAsLearned(element) }}>
           <WordPlate element={element} />
         </button>
       </Zoom >
@@ -70,7 +73,11 @@ class WordsList extends Component {
     const { progress } = this.props;
 
     if (!progress.leftToLearn.length) {
-      return <h1>Guess you learned all the words <i class="fas fa-award"></i></h1>
+      return (
+        <div className="notify-msg">
+          <h1>Guess you learned all the words <i class="fas fa-award"></i></h1>
+        </div>
+      );
     } else {
       return (
         <div>
